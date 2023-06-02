@@ -16,6 +16,13 @@
 
   <br>
 
+  <mat-form-field class="example-full-width">
+    <mat-label>Notes</mat-label>
+    <input matInput
+           formControlName="notes">
+  </mat-form-field>
+
+
   <mat-slide-toggle
   formControlName="disabled"
     [checked]="form.controls.state.disabled"

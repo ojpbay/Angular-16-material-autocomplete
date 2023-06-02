@@ -41,6 +41,7 @@ export class AutocompleteOverviewExample {
   form = new FormGroup({
     state: new FormControl(''),
     disabled: new FormControl(''),
+    notes: new FormControl('Here are some default notes')
   });
 
   states: State[] = [
