@@ -6,7 +6,7 @@
            [matAutocomplete]="auto"
            formControlName="state">
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+      <mat-option *ngFor="let state of filteredStates | async" [value]="state.id">
         <img alt="" class="example-option-img" [src]="state.flag" height="25">
         <span>{{state.name}}</span> |
         <small>Population: {{state.population}}</small>
