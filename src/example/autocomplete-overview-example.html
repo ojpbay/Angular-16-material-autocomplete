@@ -1,10 +1,10 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="form">
   <mat-form-field class="example-full-width">
     <mat-label>State</mat-label>
     <input matInput
            aria-label="State"
            [matAutocomplete]="auto"
-           [formControl]="stateCtrl">
+           formControlName="state">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
         <img alt="" class="example-option-img" [src]="state.flag" height="25">
@@ -17,11 +17,15 @@
   <br>
 
   <mat-slide-toggle
-    [checked]="stateCtrl.disabled"
-    (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
+  formControlName="disabled"
+    [checked]="form.controls.state.disabled"
+    (change)="form.controls.state.disabled ? form.controls.state.enable() : form.controls.state.disable()">
     Disable Input?
   </mat-slide-toggle>
 </form>
+
+<pre>{{form.value | json}}</pre>
+
 
 
 <!-- Copyright 2023 Google LLC. All Rights Reserved.
